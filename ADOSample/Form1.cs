@@ -16,5 +16,25 @@ namespace ADOSample
         {
             InitializeComponent();
         }
+
+        private void memoTableBindingNavigatorSaveItem_Click(object sender, EventArgs e)
+        {
+            this.Validate();
+            this.memoTableBindingSource.EndEdit();
+            this.tableAdapterManager.UpdateAll(this.infosys202007DataSet);
+
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            // TODO: このコード行はデータを 'infosys202007DataSet.memoTable' テーブルに読み込みます。必要に応じて移動、または削除をしてください。
+            this.memoTableTableAdapter.Fill(this.infosys202007DataSet.memoTable);
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.memoTableTableAdapter.Fill(this.infosys202007DataSet.memoTable);
+        }
     }
 }
